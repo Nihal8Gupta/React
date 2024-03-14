@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babel</title>
+    <title>Time</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -16,17 +16,26 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
         function Myapp(){
+            let current = new Date()
+            let headind = <h1>Contact List :</h1>
+                let list = <ul><li>Mr. Sachin</li>
+                <li>Mr. Paramjeet Singh</li>
+                <li>Mr. Afroz Alam</li></ul>
             let ele = (
-                <div>
-                    <h1 className='bg-warning text-center'>What is React</h1>
-                    <p className=' text-center'>React is a Component Based Js Library</p>
-                    <p className='text-info text-center' ><span class='text-warning'>New Random Number :</span>  {Math.random()*10} </p>
+                <div className='d-flex align-items-center flex-column border'>
+                    <div className='p-2'> Time : </div>
+                    <div className='p-2'> { current.toLocaleString()} </div>
+                    <div>{headind} {list}</div>
                 </div>
+                
             );
             return ele;
-        }
+        };
+      
         let d = document.querySelector('#root')
         ReactDOM.render(<Myapp/>,d)
+        
+
     </script>
 </body>
 </html>
