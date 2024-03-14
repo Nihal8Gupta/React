@@ -20,11 +20,12 @@
                 <div>
                     <h1 class='bg-warning text-center'>What is React</h1>
                     <p class=' text-center'>React is a Component Based Js Library</p>
+                    <p class='text-info text-center' ><span class='text-warning'>New Random Number :</span>  {Math.random()*10} </p>
                 </div>
             );
             return ele;
         }
-        let d = document.getElementById('root')
+        let d = document.querySelector('#root')
         ReactDOM.render(<Myapp/>,d)
     </script>
 </body>
